@@ -16,6 +16,11 @@
       justify-content: center;
       align-items: center;
     }
+    /* Sab text white karne ke liye */
+    * {
+      color: #fff !important;
+    }
+
     .card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
@@ -30,8 +35,19 @@
       border-radius: 12px;
       background: rgba(255,255,255,0.2);
       border: none;
-      color: #fff;
-    }
+      /* color: #f3efef; */
+      
+  border-radius: 12px;
+  background: rgba(255,255,255,0.9); 
+  border: none;
+  color: #000 !important;
+}
+
+.form-control::placeholder {
+  color: #555; /* placeholder grey */
+}
+
+    
     .form-control::placeholder {
       color: #ddd;
     }
@@ -41,7 +57,7 @@
       border-radius: 12px;
       padding: 10px;
       font-weight: bold;
-      color: #fff;
+      color: #fff !important;
       transition: 0.3s;
     }
     .btn-custom:hover {
@@ -57,11 +73,14 @@
       margin-top: 20px;
       text-align: left;
     }
+    .leaflet-popup-content {
+      color:black !important;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-
-<!-- Login / Signup -->
+  <!--Login & Signup-->
 <div class="card" id="authCard">
   <h3 class="mb-3">🔐 Smart Tourist Safety</h3>
   <input type="text" id="username" class="form-control mb-3" placeholder="Enter Username">
@@ -76,7 +95,7 @@
   <div class="feature-box">
     <p><strong>Name:</strong> <span id="pName"></span></p>
     <p><strong>User ID:</strong> <span id="pID"></span></p>
-    <p><strong>Blockchain Hash:</strong> <span id="pHash" class="text-warning"></span></p>
+    <p><strong>Blockchain Hash:</strong> <span id="pHash"></span></p>
   </div>
 
   <!-- Lost Tourist -->
@@ -112,7 +131,7 @@
     <h5>🌋 Natural Hazard Alert</h5>
     <button class="btn btn-custom" onclick="triggerHazard()">Trigger Hazard</button>
     <button class="btn btn-outline-light" onclick="clearHazard()">Clear Alert</button>
-    <p id="hazardMsg" class="mt-2 text-danger"></p>
+    <p id="hazardMsg" class="mt-2"></p>
   </div>
 </div>
 
